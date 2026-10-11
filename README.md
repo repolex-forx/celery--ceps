@@ -1,1 +1,125 @@
-Initializing
+# Repolex Knowledge Graph of celery/ceps
+
+RDF knowledge graph data for [celery/ceps](https://github.com/celery/ceps), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download celery/ceps
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 462d4aa70134b682cb70a97335cef9874d99cd1a
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── 462d4aa70134b682cb70a97335cef9874d99cd1a
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 0a78863e7329aeab1e1a1102264ebcf36b73b1bf.nq.gz
+│   ├── 0b76ea70fdf822cf2558277ab591d668208c583a.nq.gz
+│   ├── 0bdb6972ecdb30b01a14d683f0ae7b0bbf545b84.nq.gz
+│   ├── 14e40247e0a2b1e8fe60e52117632bd05de891fe.nq.gz
+│   ├── 16539a9e69e71a73b4409ed2d8bacc0a8c0c41b3.nq.gz
+│   ├── 1bb3655e464024556f3b9a69d1f092b42265890c.nq.gz
+│   ├── 1f41c6bbc9cf2d98117062fab275733bde7a0137.nq.gz
+│   ├── 1f43dadef7a6e7d5427d2b1acd2dea602928fcc4.nq.gz
+│   ├── 206cf576aae33bc8931e76c918ea687bdef83095.nq.gz
+│   ├── 259fb7059610d20da51c65091132d927bfb094d4.nq.gz
+│   ├── 2aaa9b3b8f2dc82ad8b4004bd54fc810100bd328.nq.gz
+│   ├── 2f61eaa65f0f327a7ce24ddfb68d960355cf630e.nq.gz
+│   ├── 472024668c999d10a709fed4365d5d87f058e332.nq.gz
+│   ├── 527fe347691e9ade2d1a545b8b87f739e527a1e7.nq.gz
+│   ├── 542818ad71d54150eab212e96278a6bb3e4d86d9.nq.gz
+│   ├── 63303a1bf9a8d6cbb41ffbfc1c8192fd04fb0a39.nq.gz
+│   ├── 6891a537191948b94beb0790928de83083731e04.nq.gz
+│   ├── 6a1b9ada0e84312df97e8d0210a72d1b9f529421.nq.gz
+│   ├── 6dd6d6e42a9d512eb5beb6836f090c7ea663dbdc.nq.gz
+│   ├── 72451451f26c54b5dcbba96a2b10871f4cde2107.nq.gz
+│   ├── 7d2c1ee4edf95e28e96a4d1894719e5c94656197.nq.gz
+│   ├── 7e8280411928775922ff354440421a168d709953.nq.gz
+│   ├── 811132a522e23f6f5df6a35f058b5fbfcd3eec5e.nq.gz
+│   ├── 8db5cd9ec9c555f4ac357dac98209d0e08e233a4.nq.gz
+│   ├── 908033aceb2d62a9d173a2128e9f8be1fadd1cac.nq.gz
+│   ├── 913415ac83e6589fdf55052f1b3c830c4c19caee.nq.gz
+│   ├── a4d19b1cb55f7db4536a2e24ef89e5357ffb39c9.nq.gz
+│   ├── a5e0630e3fc1300619be3b6df13870340c03ec00.nq.gz
+│   ├── a7cbaca09ffde4e0d14a648ac9a681323d0e17cb.nq.gz
+│   ├── b16be9d6e9b25dca2b79543160183f790d93e8ca.nq.gz
+│   ├── b647c39f5c7a3e41444772b7871329ca18bf8ff4.nq.gz
+│   ├── b696a2f19f5f47bb2f2540d22a692daabc87f379.nq.gz
+│   ├── b6cc14378bf4507bc62eaad7440f2dfeb670a54f.nq.gz
+│   ├── b6d322e24ad0bfc741bbbbd4a6faef344a5abca9.nq.gz
+│   ├── bc87ee8257a206caa0408898a9e1c1336d82dac2.nq.gz
+│   ├── c325254d3a19df09404e3251fe666f7b21a666b7.nq.gz
+│   ├── c669b675ce975f7cfd273cb3185735647c481eba.nq.gz
+│   ├── cf49a4eba4afdb1c9b980ebe9683debb9e30c8e7.nq.gz
+│   ├── d2434d15410e85989ccc7ef2e296ae29f3b10362.nq.gz
+│   ├── e19ae4c61ff1ff8e78f628d4ee86d1d3c3175da5.nq.gz
+│   ├── e6784c89ca9939c9995fe04fe37c1ce53ce8fd3b.nq.gz
+│   ├── e69de29bb2d1d6434b8b29ae775ad8c2e48c5391.nq.gz
+│   ├── f2cad73bc9c6e257886e18ff88985cd90a2d1838.nq.gz
+│   ├── f911f2b90cfb943ffdf10042cdc9cd06d0754c40.nq.gz
+│   ├── fcb34413e0d150b38bc8392239cca86417a782c4.nq.gz
+│   └── fe0563ee37420a04503c4ae1d2739d5261715022.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── 462d4aa70134b682cb70a97335cef9874d99cd1a.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 54 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[celery/ceps](https://github.com/celery/ceps)
+
+---
+*Parsed on 2026-10-11 by [repolex](https://repolex.ai)*
